@@ -21,7 +21,8 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'new-cap': [2, { capIsNewExceptions: ['List', 'Map', 'Set'] }],
     'react/no-multi-comp': 0,
-
+    'react/react-in-jsx-scope': 0,
+    'react/jsx-uses-react': 0,
     'import/default': 0,
     'import/no-duplicates': 0,
     'import/named': 0,

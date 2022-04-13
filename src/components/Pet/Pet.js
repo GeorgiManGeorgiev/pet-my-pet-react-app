@@ -4,7 +4,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/function-component-definition */
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Pet({
   id,
@@ -30,13 +30,13 @@ function Pet({
       <p className="img"><img src={imageURL} alt="pet" /></p>
       <p className="description">{description}</p>
       <div className="pet-info">
-        <a href="#">
+        <Link to="#">
           <button className="button">
             <i className="fas fa-heart" />
             Pet
           </button>
-        </a>
-        <a href="#"><button className="button">Details</button></a>
+        </Link>
+        <Link to={`/pets/details/${id}`}><button className="button">Details</button></Link>
         <i className="fas fa-heart" />
         <span>
           {likes}
