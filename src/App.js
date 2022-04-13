@@ -12,7 +12,11 @@ function App() {
 
       <Header />
       <Routes>
-        <Route path="/" element={<Categories />} />
+        <Route path="/" element={<Categories />}>
+          <Route path="/categories/" element={<Categories />} />
+          <Route path="/categories/:category" element={<Categories />} />
+        </Route>
+
       </Routes>
 
       <Footer />

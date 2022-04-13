@@ -1,82 +1,32 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/button-has-type */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react/function-component-definition */
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import CategoryNavigation from './CategoryNavigation/CategoryNavigation';
+import Pet from '../Pet/Pet';
 
-const Categories = () => (
-  <section className="dashboard">
-    <h1>Dashboard</h1>
-    <nav className="navbar">
-      <ul>
-        <li><a href="#">All</a></li>
-        <li><a href="#">Cats</a></li>
-        <li><a href="#">Dogs</a></li>
-        <li><a href="#">Parrots</a></li>
-        <li><a href="#">Reptiles</a></li>
-        <li><a href="#">Other</a></li>
+function Categories() {
+  const [pets, setPets] = useState([]);
+  const { category } = useParams();
+
+  useEffect(async () => {
+    const queryString = category ? `?category=${category}` : '';
+
+    fetch(`http://localhost:5000/pets${queryString}`)
+      .then((res) => res.json())
+      .then((res) => setPets(res))
+      .catch((err) => console.log(err));
+  }, []);
+
+  return (
+    <section className="dashboard">
+      <h1>Dashboard</h1>
+      <CategoryNavigation />
+      <ul className="other-pets-list">
+        {pets.map((x) => <Pet key={x.id} {...x} />)}
       </ul>
-    </nav>
-    <ul className="other-pets-list">
-      <li className="otherPet">
-        <h3>Name: Gosho</h3>
-        <p>Category: Cat</p>
-        <p className="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png" /></p>
-        <p className="description">This is not my cat Gosho</p>
-        <div className="pet-info">
-          <a href="#">
-            <button className="button">
-              <i className="fas fa-heart" />
-              {' '}
-              Pet
-            </button>
-          </a>
-          <a href="#"><button className="button">Details</button></a>
-          <i className="fas fa-heart" />
-          {' '}
-          <span> 2</span>
-        </div>
-      </li>
-      <li className="otherPet">
-        <h3>Name: Gosho</h3>
-        <p>Category: Cat</p>
-        <p className="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png" /></p>
-        <p className="description">This is not my cat Gosho</p>
-        <div className="pet-info">
-          <a href="#">
-            <button className="button">
-              <i className="fas fa-heart" />
-              {' '}
-              Pet
-            </button>
-          </a>
-          <a href="#"><button className="button">Details</button></a>
-          <i className="fas fa-heart" />
-          {' '}
-          <span> 2</span>
-        </div>
-
-      </li>
-      <li className="otherPet">
-        <h3>Name: Kiro</h3>
-        <p>Category: Dog</p>
-        <p className="img"><img src="http://www.stickpng.com/assets/images/580b57fbd9996e24bc43bbde.png" /></p>
-        <p className="description">This is my dog Kiro</p>
-        <div className="pet-info">
-          <a href="#">
-            <button className="button">
-              <i className="fas fa-heart" />
-              {' '}
-              Pet
-            </button>
-          </a>
-          <a href="#"><button className="button">Details</button></a>
-          <i className="fas fa-heart" />
-          {' '}
-          <span> 4</span>
-        </div>
-      </li>
-    </ul>
-  </section>
-);
+    </section>
+  );
+}
 export default Categories;

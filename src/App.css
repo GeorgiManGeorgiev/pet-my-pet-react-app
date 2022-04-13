@@ -466,3 +466,7 @@ footer p {
 #errorBox>span {
   background: #F50;
 }
+
+.active {
+  background-color: lightgreen !important;
+}
