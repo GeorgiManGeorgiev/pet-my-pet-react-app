@@ -18,6 +18,7 @@ module.exports = {
     'react',
   ],
   rules: {
+    'react/function-component-definition': [2, { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' }],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'new-cap': [2, { capIsNewExceptions: ['List', 'Map', 'Set'] }],
     'react/no-multi-comp': 0,

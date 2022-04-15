@@ -1,56 +1,52 @@
-/* eslint-disable arrow-body-style */
-/* eslint-disable react/function-component-definition */
-
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { Link } from 'react-router-dom';
 
-const Header = () => {
-  return (
-    <header id="site-header">
-      <nav className="navbar">
-        <section className="navbar-dashboard">
-          <div className="first-bar">
-            <a href="/">Dashboard</a>
-            <a className="button" href="#">My Pets</a>
-            <a className="button" href="#">Add Pet</a>
-          </div>
-          <div className="second-bar">
-            <ul>
-              <li>
-                Welcome,
-                Pesho
-                !
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fas fa-sign-out-alt" />
-                  {' '}
-                  Logout
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section className="navbar-anonymous">
+const Header = () => (
+  <header id="site-header">
+    <nav className="navbar">
+      <section className="navbar-dashboard">
+        <div className="first-bar">
+          <Link to="/">Dashboard</Link>
+          <Link className="button" to="#">My Pets</Link>
+          <Link className="button" to="/pets/create">Add Pet</Link>
+        </div>
+        <div className="second-bar">
           <ul>
             <li>
-              <a href="#">
-                <i className="fas fa-user-plus" />
-                {' '}
-                Register
-              </a>
+              Welcome,
+              Pesho
+              !
             </li>
             <li>
-              <a href="#">
-                <i className="fas fa-sign-in-alt" />
+              <Link to="#">
+                <i className="fas fa-sign-out-alt" />
                 {' '}
-                Login
-              </a>
+                Logout
+              </Link>
             </li>
           </ul>
-        </section>
-      </nav>
-    </header>
-  );
-};
+        </div>
+      </section>
+      <section className="navbar-anonymous">
+        <ul>
+          <li>
+            <Link to="#">
+              <i className="fas fa-user-plus" />
+              {' '}
+              Register
+            </Link>
+          </li>
+          <li>
+            <Link to="#">
+              <i className="fas fa-sign-in-alt" />
+              {' '}
+              Login
+            </Link>
+          </li>
+        </ul>
+      </section>
+    </nav>
+  </header>
+);
 
 export default Header;

@@ -1,16 +1,15 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as petsService from '../../services/petsService';
 
-function PetDetails() {
+const PetDetails = () => {
   const [pet, setPet] = useState({});
   const { petId } = useParams();
 
   useEffect(async () => {
-    const petResult = await petsService.getOne(petId).then((res) => setPet(res));
+    await petsService.getOne(petId).then((res) => setPet(res));
   }, [petId]);
 
   return (
@@ -34,6 +33,6 @@ function PetDetails() {
     </section>
 
   );
-}
+};
 
 export default PetDetails;

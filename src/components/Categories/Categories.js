@@ -6,7 +6,7 @@ import CategoryNavigation from './CategoryNavigation/CategoryNavigation';
 import Pet from '../Pet/Pet';
 import * as petsService from '../../services/petsService';
 
-function Categories() {
+const Categories = () => {
   const [pets, setPets] = useState([]);
   const { category } = useParams();
 
@@ -23,5 +23,5 @@ function Categories() {
       </ul>
     </section>
   );
-}
+};
 export default Categories;
