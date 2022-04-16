@@ -1,5 +1,6 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as petsService from '../../services/petsService';
@@ -30,6 +31,12 @@ const PetDetails = () => {
       </p>
       <p className="img"><img src={pet.imageURL} alt="pet" /></p>
       <p className="description">{pet.description}</p>
+      <div className="pet-info">
+        <Link to={`/pets/details/${pet.id}/edit`}><button className="button">Edit</button></Link>
+        <Link to="#"><button className="button">Delete</button></Link>
+        <i className="fas fa-heart" />
+
+      </div>
     </section>
 
   );

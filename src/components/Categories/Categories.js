@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CategoryNavigation from './CategoryNavigation/CategoryNavigation';
-import Pet from '../Pet/Pet';
+import PetCard from '../PetCard/PetCard';
 import * as petsService from '../../services/petsService';
 
 const Categories = () => {
@@ -19,7 +19,7 @@ const Categories = () => {
       <h1>Dashboard</h1>
       <CategoryNavigation />
       <ul className="other-pets-list">
-        {pets.map((x) => <Pet key={x.id} {...x} />)}
+        {pets.map((x) => <PetCard key={x.id} {...x} />)}
       </ul>
     </section>
   );

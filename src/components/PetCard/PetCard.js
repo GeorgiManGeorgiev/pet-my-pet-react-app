@@ -6,7 +6,7 @@
 /* eslint-disable react/function-component-definition */
 import { Link } from 'react-router-dom';
 
-function Pet({
+function PetCard({
   id,
   name,
   description,
@@ -46,4 +46,4 @@ function Pet({
   );
 }
 
-export default Pet;
+export default PetCard;

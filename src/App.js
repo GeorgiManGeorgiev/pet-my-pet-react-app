@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Categories from './components/Categories/Categories';
 import PetDetails from './components/PetDetails/PetDetails';
+import PetEdit from './components/PetEdit/PetEdit';
 import CreatePet from './components/CreatePet/CreatePet';
 
 import './App.css';
@@ -18,6 +19,7 @@ const App = () => (
       </Route>
       <Route path="/pets/details/:petId" element={<PetDetails />} />
       <Route path="pets/create" element={<CreatePet />} />
+      <Route path="/pets/details/:petId/edit" element={<PetEdit />} />
     </Routes>
 
     <Footer />
