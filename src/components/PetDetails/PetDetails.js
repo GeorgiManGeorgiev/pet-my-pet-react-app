@@ -1,4 +1,3 @@
-/* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -13,6 +12,13 @@ const PetDetails = () => {
     await petsService.getOne(petId).then((res) => setPet(res));
   }, [petId]);
 
+  const onPetButtonClickHandler = async () => {
+    const incrementedLikes = Number(pet.likes) + 1;
+    petsService.pet(petId, incrementedLikes).then(() => {
+      // setPet(updatedPet);
+      setPet((state) => ({ ...state, likes: state.likes + 1 }));
+    });
+  };
   return (
 
     <section className="detailsOtherPet">
@@ -22,18 +28,18 @@ const PetDetails = () => {
         {' '}
         {pet.likes}
         {' '}
-        <a href="#">
-          <button className="button">
-            <i className="fas fa-heart" />
-            Pet
-          </button>
-        </a>
+
+        <button className="button" type="button" onClick={onPetButtonClickHandler}>
+          <i className="fas fa-heart" />
+          Pet
+        </button>
+
       </p>
       <p className="img"><img src={pet.imageURL} alt="pet" /></p>
       <p className="description">{pet.description}</p>
       <div className="pet-info">
-        <Link to={`/pets/details/${pet.id}/edit`}><button className="button">Edit</button></Link>
-        <Link to="#"><button className="button">Delete</button></Link>
+        <Link to={`/pets/details/${pet.id}/edit`}><button className="button" type="button">Edit</button></Link>
+        <Link to="#"><button className="button" type="button">Delete</button></Link>
         <i className="fas fa-heart" />
 
       </div>
