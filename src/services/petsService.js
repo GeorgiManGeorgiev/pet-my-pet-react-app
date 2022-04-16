@@ -41,4 +41,4 @@ export const pet = (petId, likes) => fetch(`${url}/${petId}`, {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({ likes })
-});
+}).then((res) => res.json());

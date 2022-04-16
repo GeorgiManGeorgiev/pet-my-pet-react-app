@@ -15,8 +15,7 @@ const PetDetails = () => {
   const onPetButtonClickHandler = async () => {
     const incrementedLikes = Number(pet.likes) + 1;
     petsService.pet(petId, incrementedLikes).then(() => {
-      // setPet(updatedPet);
-      setPet((state) => ({ ...state, likes: state.likes + 1 }));
+      setPet((state) => ({ ...state, likes: Number(state.likes) + 1 }));
     });
   };
   return (
