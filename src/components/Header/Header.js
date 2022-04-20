@@ -18,7 +18,7 @@ const Header = () => (
               !
             </li>
             <li>
-              <Link to="#">
+              <Link to="/logout">
                 <i className="fas fa-sign-out-alt" />
                 {' '}
                 Logout
@@ -30,14 +30,14 @@ const Header = () => (
       <section className="navbar-anonymous">
         <ul>
           <li>
-            <Link to="#">
+            <Link to="/register">
               <i className="fas fa-user-plus" />
               {' '}
               Register
             </Link>
           </li>
           <li>
-            <Link to="#">
+            <Link to="/login">
               <i className="fas fa-sign-in-alt" />
               {' '}
               Login
