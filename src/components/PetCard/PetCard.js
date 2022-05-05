@@ -4,17 +4,27 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/function-component-definition */
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import * as petsService from '../../services/petsService';
 
-function PetCard({
+const PetCard = ({
   id,
   name,
   description,
   imageURL,
   category,
   likes,
+}) => {
+  const [currentLikes, setCurrentLikes] = useState(likes);
 
-}) {
+  const onPetButtonClickHander = () => {
+    petsService.pet(id, likes + 1)
+      .then((result) => {
+        setCurrentLikes(result.likes);
+      });
+  };
+
   return (
     <li className="otherPet">
       <h3>
@@ -27,23 +37,19 @@ function PetCard({
         {' '}
         {category}
       </p>
-      <p className="img"><img src={imageURL} alt="pet" /></p>
+      <p className="img"><img src={imageURL} /></p>
       <p className="description">{description}</p>
       <div className="pet-info">
-        <Link to="#">
-          <button className="button">
-            <i className="fas fa-heart" />
-            Pet
-          </button>
-        </Link>
+        <button className="button" onClick={onPetButtonClickHander}>
+          <i className="fas fa-heart" />
+          Pet
+        </button>
         <Link to={`/pets/details/${id}`}><button className="button">Details</button></Link>
         <i className="fas fa-heart" />
-        <span>
-          {likes}
-        </span>
+        <span>{currentLikes}</span>
       </div>
     </li>
   );
-}
+};
 
 export default PetCard;

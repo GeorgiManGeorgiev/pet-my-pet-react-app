@@ -12,6 +12,9 @@ const Categories = () => {
 
   useEffect(() => {
     petsService.getAll(category).then((res) => setPets(res));
+    // if (Math.random() > 0.5) {
+    //   throw new Error('Something whent wrong');
+    // }
   }, [category]);
 
   return (

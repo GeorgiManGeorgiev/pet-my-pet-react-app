@@ -2,8 +2,9 @@ const url = 'http://localhost:5000/pets';
 
 export const getAll = (category = '') => {
   const petUrl = url + (category ? `?category=${category}` : '');
-  console.log(petUrl);
-  return fetch(petUrl).then((res) => res.json()).catch((err) => console.log(err));
+  return fetch(petUrl)
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
 };
 
 export const getOne = (petId) => fetch(`${url}/${petId}`)

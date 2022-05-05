@@ -6,7 +6,7 @@
       "description": "My dog Yara. 2 months old. doggy hjkhjk",
       "imageURL": "https://cdn1-www.dogtime.com/assets/uploads/2017/09/pit-bull-puppies-2.jpg",
       "category": "Dog",
-      "likes": "3",
+      "likes": "31",
       "_acl": {
         "creator": "5bb0874caccb650325e0227b"
       },
@@ -21,7 +21,7 @@
       "description": "This is my parrot Koko. He is one year old. He likes to sing a lot. ",
       "imageURL": "https://cdn.omlet.co.uk/images/originals/fischer's-lovebird.jpg",
       "category": "Parrot",
-      "likes": 27,
+      "likes": 29,
       "_acl": {
         "creator": "5bb088003e67d9190597f9a6"
       },
@@ -36,7 +36,7 @@
       "description": "This is my horse Spirit. He is 5 years old. He likes to run around like crazy and go to horse races.",
       "imageURL": "https://bransbyhorses.co.uk/wp-content/uploads/2016/03/Sophie.jpg",
       "category": "Other",
-      "likes": 1,
+      "likes": 8,
       "_acl": {
         "creator": "5bb088003e67d9190597f9a6"
       },
