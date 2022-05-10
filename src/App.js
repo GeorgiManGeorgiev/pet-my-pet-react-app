@@ -14,6 +14,9 @@ const App = () => (
   <div className="container">
 
     <Header />
+
+
+    
     <CustomErrorBoundrary>
       <Routes>
         <Route path="/" element={<Categories />}>
