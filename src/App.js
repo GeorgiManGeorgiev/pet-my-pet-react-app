@@ -10,8 +10,6 @@ import CustomErrorBoundrary from './components/CustomErrorBoundrary/CustomErrorB
 
 import './App.css';
 
-
-
 const App = () => (
   <div className="container">
 
