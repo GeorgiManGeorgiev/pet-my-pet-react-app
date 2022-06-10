@@ -6,7 +6,6 @@ const Login = () => {
     const username = e.target.username.value;
     const password = e.target.password.value;
     console.log(username);
-    console.log(password);
   };
   return (
     <section className="login">
